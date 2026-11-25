@@ -1,0 +1,39 @@
+{
+    "qwen3.6_27b_home": {
+        "connection_data": {
+            "model": "unsloth/Qwen3.6-27B-GGUF:Q4_K_M",
+            "base_url": "--------",
+            "api_key": "--------"
+        },
+        "configuration_profiles": {
+            "non_thinking": {
+                "temperature": 0.7,
+                "top_p": 0.80,
+                "presence_penalty": 1.5,
+                "extra_body": {
+                    "min_p": 0.0,
+                    "top_k": 20,
+                    "repetition_penalty": 1.0,
+                    "chat_template_kwargs": {"enable_thinking": false}
+                }
+            },
+            "thinking": {}
+        }
+    },
+    "qwen3.6_35b_server": {
+        "connection_data": {
+            "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+            "base_url": "--------",
+            "api_key": "--------"
+        },
+        "configuration_profiles": {}
+    },
+    "qwen3.6_27b_office": {
+        "connection_data": {
+            "model": "unsloth/Qwen3.6-27B-GGUF:Q4_K_M",
+            "base_url": "--------",
+            "api_key": "--------"
+        },
+        "configuration_profiles": {}
+    }
+}

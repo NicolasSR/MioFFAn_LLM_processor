@@ -1,0 +1,9 @@
+{
+    "default_article_filename": "test_article",
+    "default_extract_filename": "test_extract",
+    "default_ontology_filename": "ontology",
+    "default_llm_connection": "qwen3.6_27b_office",
+    "default_run_name": "default_run",
+    "default_chunk_strategy": {"name": "section"},
+    "default_chunk_strategy_len": {"name": "length", "window": 1500, "overlap": 0.1}
+}
