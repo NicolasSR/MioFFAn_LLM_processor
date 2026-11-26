@@ -12,7 +12,7 @@ from src.lib.pydantic_models import (
     Mathematical_entites_list,
     Written_representation
 )
-from src.lib.equation_utils import get_slt_from_latex, get_slt_from_mathml
+from src.lib.equation_utils import get_slt_str_from_latex, get_slt_str_from_mathml_str
 
 logger = logging.getLogger(__name__)
 
@@ -218,9 +218,9 @@ def get_missing_slts_node(state: GraphState, runtime: Runtime[GraphContext]) -> 
 
     for repr_uri, repr_info in repr_dict.items():
         if repr_info["type"] == "latex":
-            slt_str = get_slt_from_latex(repr_info["str"])
+            slt_str = get_slt_str_from_latex(repr_info["str"])
         elif repr_info["type"] == "mathml":
-            slt_str = get_slt_from_mathml(repr_info["str"])
+            slt_str = get_slt_str_from_mathml_str(repr_info["str"])
         else:
             logger.warning(f"Type unknown for representation {repr_info}. Could not create SLT")
             continue

@@ -8,7 +8,7 @@ import re
 from lxml import html
 
 from src.lib.html_utils import parse_html, extract_and_substitute_mathml_elements, get_text_and_eq_per_dfs_elem
-from src.lib.equation_utils import mathml_to_latex, get_slt_from_mathml, search_slt_in_doc_slt
+from src.lib.equation_utils import mathml_to_latex, get_slt_str_from_mathml_str
 from src.lib.chunking_strategies import chunk_by_section, chunk_by_length, ChunkDict
 
 logger = logging.getLogger(__name__)
@@ -47,13 +47,13 @@ class ArticleProcessor():
         self.display_math_dict = { math_id: EquationDict(
             mathml_str = mathml_str,
             latex_str = mathml_to_latex(mathml_str),
-            slt_str = get_slt_from_mathml(mathml_str))
+            slt_str = get_slt_str_from_mathml_str(mathml_str))
             for math_id, mathml_str in display_mathml_dict.items()
         }
         self.inline_math_dict = { math_id: EquationDict(
             mathml_str = mathml_str,
             latex_str = mathml_to_latex(mathml_str),
-            slt_str = get_slt_from_mathml(mathml_str))
+            slt_str = get_slt_str_from_mathml_str(mathml_str))
             for math_id, mathml_str in inline_mathml_dict.items()
         }
 
